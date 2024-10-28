@@ -1,3 +1,5 @@
+"""Rank a table of metrics."""
+
 import pandas as pd
 import click
 from pandas.api.types import is_numeric_dtype

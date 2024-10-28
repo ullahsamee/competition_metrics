@@ -1,3 +1,5 @@
+"""Extract metrics from ColabFold outputs."""
+
 import os
 import numpy as np
 import json

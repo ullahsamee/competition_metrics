@@ -1,3 +1,5 @@
+"""Compute ESM2 PLL given binder sequence."""
+
 import math
 import torch
 import esm
