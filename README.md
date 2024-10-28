@@ -50,7 +50,7 @@ Here `{NAME}` is the name of the protein. Most of the time it is the name you pr
 The ESM PLL metric can be computed with a separate script. This assumes that your machine has a GPU.
 
 ```bash
-python compute_esm_pll.py {BINDER_SEQUENCE}
+python compute_pll.py {BINDER_SEQUENCE}
 ```
 
 Here `{BINDER_SEQUENCE}` is the amino acid sequence of the binder protein. The script will output the ESM PLL metric for this sequence.
