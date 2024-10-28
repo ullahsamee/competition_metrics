@@ -53,7 +53,7 @@ The ESM PLL metric can be computed with a separate script. This assumes that you
 python compute_esm_pll.py {BINDER_SEQUENCE}
 ```
 
-Here `{BINDER_SEQUENCE}` is the sequence of the binder protein. The script will output the ESM PLL metric for the protein.
+Here `{BINDER_SEQUENCE}` is the amino acid sequence of the binder protein. The script will output the ESM PLL metric for this sequence.
 
 ## Rank average
 
