@@ -1,6 +1,6 @@
 # Adaptyv Bio Competition Metrics
 
-In round 2 of our protein design competition we are using a rank average of three metrics: iPTM, ESM PLL and PAE interaction. Here you can find some details on how to compute those metrics for your proteins.
+In round 2 of our [protein design competition](https://design.adaptyvbio.com/) we are using a rank average of three metrics: iPTM, ESM PLL and PAE interaction. Here you can find some details on how to compute those metrics for your proteins.
 
 ## Installation
 
