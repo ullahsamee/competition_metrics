@@ -58,3 +58,9 @@ Here `{BINDER_SEQUENCE}` is the amino acid sequence of the binder protein. The s
 ## Rank average
 
 To compute the final value, we rank the designs on each of the three metrics separately and then average the ranks. Ties are resolved by averaging the ranks of the tied submissions. The lower the rank average, the better the submission.
+
+We have added a helper script that takes a csv of metrics and computes a rank average. 
+
+```bash
+python rank.py metrics.csv --asc esm_pll --asc iptm --desc pae_interaction --save_path ranked_metrics.csv
+```
