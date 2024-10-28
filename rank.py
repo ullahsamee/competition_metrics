@@ -4,6 +4,7 @@ import pandas as pd
 import click
 from pandas.api.types import is_numeric_dtype
 
+
 def add_rank(df, asc=None, desc=None):
     if asc is None:
         asc = []
@@ -19,9 +20,14 @@ def add_rank(df, asc=None, desc=None):
     df = df.sort_values(["rank"])
     return df
 
+
 @click.command
-@click.option("--asc", multiple=True, type=str, help="Column names to sort by (ascending).")
-@click.option("--desc", multiple=True, type=str, help="Column names to sort by (descending).")
+@click.option(
+    "--asc", multiple=True, type=str, help="Column names to sort by (ascending)."
+)
+@click.option(
+    "--desc", multiple=True, type=str, help="Column names to sort by (descending)."
+)
 @click.option("--save_path", type=str, help="Path to save the table with the rank.")
 @click.argument("input_path")
 def rank(asc, desc, save_path, input_path):

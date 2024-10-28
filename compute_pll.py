@@ -12,6 +12,7 @@ batch_converter = alphabet.get_batch_converter()
 model.eval()
 model = model.to(device)
 
+
 def compute_pll(sequence):
     data = [("protein", sequence)]
     batch_converter = alphabet.get_batch_converter()
@@ -21,9 +22,12 @@ def compute_pll(sequence):
         batch_tokens_masked = batch_tokens.clone()
         batch_tokens_masked[0, i + 1] = alphabet.mask_idx
         with torch.no_grad():
-            token_probs = torch.log_softmax(model(batch_tokens_masked.to(device))["logits"], dim=-1)
+            token_probs = torch.log_softmax(
+                model(batch_tokens_masked.to(device))["logits"], dim=-1
+            )
         log_probs.append(token_probs[0, i + 1, alphabet.get_idx(sequence[i])].item())
     return math.fsum(log_probs)
+
 
 @click.command()
 @click.argument("aa_sequence")
@@ -31,6 +35,6 @@ def main(aa_sequence):
     pll = compute_pll(aa_sequence)
     print(f"PLL: {pll}")
 
+
 if __name__ == "__main__":
     main()
-    
