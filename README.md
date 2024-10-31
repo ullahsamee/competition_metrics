@@ -15,7 +15,7 @@ $s(seq)=\frac{1}{3}\left(r_\uparrow\left(iPTM\left(seq\right)\right)+r_\downarro
 
 with
 
-- $r_{\lbrace \downarrow / \uparrow\rbrace}(\cdot)$ being ascending/descending ranks (using fractional ranking to deal with ties)
+- $r_{\lbrace \uparrow /  \downarrow \rbrace}(\cdot)$ being ascending/descending ranks (using fractional ranking to deal with ties)
 - $iPTM$ being AF2 interface predicted TM-score as in [Evans et al.2022](https://www.biorxiv.org/content/10.1101/2021.10.04.463034v2)
 - $PAE$ being AF2 predicted alignment error averaged over inter-chain residue pairs (as in e.g. [specifically here](https://github.com/nrbennet/dl_binder_design), [specifically here](https://github.com/nrbennet/dl_binder_design/blob/cafa3853ac94dceb1b908c8d9e6954d71749871a/af2_initial_guess/predict.py#L197)).
 - $pLL$ being the [Pseudo-log-likelihood](https://en.wikipedia.org/wiki/Pseudolikelihood) of the `esm2_t33_650M_UR50D` model
