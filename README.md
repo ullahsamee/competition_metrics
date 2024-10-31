@@ -1,6 +1,39 @@
 # Adaptyv Bio Competition Metrics
 
-In round 2 of our [protein design competition](https://design.adaptyvbio.com/) we are using a rank average of three metrics: iPTM, ESM PLL and PAE interaction. Here you can find some details on how to compute those metrics for your proteins.
+In round 2 of our [protein design competition](https://design.adaptyvbio.com/) we are using a rank average of three metrics: iPTM, ESM PLL and PAE interaction.
+Here you can find some implementation details on how to compute those metrics for your proteins, as well as our rationale with going with these metrics and aggregation method.
+
+# Metrics Rationale
+
+After our [call for suggestions and input](https://x.com/adaptyvbio/status/1841863101408280651), we internally discussed scores like PRODIGY, molecular dynamics simulations and other ideas and also sought out (and received) feedback about their generality.
+
+Our goal was to find "better" metrics that would in particular help us to choose (and the participants to design) sequences that are likely to express and be measurable, since the "high" rate of non-expression was a source of frustration for some round 1 participants.
+
+In the end, we went with the following score
+
+$s(seq)=\frac{1}{3}\left(r_\uparrow\left(iPTM\left(seq\right)\right)+r_\downarrow\left(PAE\left(seq\right)\right)+r_\uparrow\left(pLL\left(seq\right)\right)\right)$
+
+with
+
+- $r_{\lbrace \downarrow / \uparrow\rbrace}(\cdot)$ being ascending/descending ranks (using fractional ranking to deal with ties)
+- $iPTM$ being AF2 interface predicted TM-score as in [Evans et al.2022](https://www.biorxiv.org/content/10.1101/2021.10.04.463034v2)
+- $PAE$ being AF2 predicted alignment error averaged over inter-chain residue pairs (as in e.g. [specifically here](https://github.com/nrbennet/dl_binder_design), [specifically here](https://github.com/nrbennet/dl_binder_design/blob/cafa3853ac94dceb1b908c8d9e6954d71749871a/af2_initial_guess/predict.py#L197)).
+- $pLL$ being the [Pseudo-log-likelihood](https://en.wikipedia.org/wiki/Pseudolikelihood) of the `esm2_t33_650M_UR50D` model
+
+due to considerations of evaluation time (ruling out MD based metrics), simplicity while still providing a "good enough" metric allowing for direct optimization.
+
+$iPTM$ was added as a measure of "global" structure quality, while we hope that $pLL$ will help bias things towards expressible targets.
+Despite the latter possibly being a [spurious correlation](https://x.com/adaptyvbio/status/1844456050726174751), most experts we asked said that everything else being equal, low $pLL$ is probably a good filtering criteria for unexpressible sequences.
+
+Unlike the first round of the competition, we compute all AlphaFold2 derived metrics using templates taking inspiration from https://github.com/nrbennet/dl_binder_design.
+We made this choice since we received feedback that this improves the quality of the predictions.
+This and the inclusion of the $pLL$ _might_ favour more "natural" designs or those closer to existing sequences over denovo design.
+However, some bias is unavoidable in the absence of a clearly winning metric. Combining this with the fact that we did not receive any suggestions for clearly better alternatives made us bite this particular bullet.
+As we state in the [evaluation criteria](https://design.adaptyvbio.com/)
+
+> 100 additional designs will be chosen for their novelty, creativity in the design process or other interesting factors.
+
+so we will use this flexibility to ensure some "interesting" denovo designs are chosen to counteract this possible bias, if it occurs.
 
 ## Installation
 
