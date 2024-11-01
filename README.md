@@ -73,7 +73,7 @@ Here `{NAME}.a3m` and `{NAME}_pdb100_230517.m8` are the MSA and template files g
 You can find a script for extracting iPTM and PAE interaction from the AlphaFold2 predictions with our python script. Note that this script assumes that the binder sequence always comes before the target sequence in the input fasta file.
 
 ```bash
-python extract_metrics.py output_dir {NAME} --target_length {TARGET_LENGTH}
+python compute_af2_metrics.py output_dir {NAME} --target_length {TARGET_LENGTH}
 ```
 
 Here `{NAME}` is the name of the protein. Most of the time it is the name you provided in the input fasta file. The `output_dir` parameter should point to a folder generated with commands from the previous section. The script will output the iPTM and PAE interaction metrics for the protein. The `--target_length` flag is optional and should be used if the target sequence is not EGFR (as in our competition).
