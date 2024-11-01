@@ -80,7 +80,7 @@ Here `{NAME}` is the name of the protein. Most of the time it is the name you pr
 
 ## Computing ESM PLL
 
-The ESM PLL metric can be computed with a separate script. This assumes that your machine has a GPU.
+The ESM PLL metric can be computed with a separate script. This will use a GPU if your machine has one.
 
 ```bash
 python compute_pll.py {BINDER_SEQUENCE}
