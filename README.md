@@ -32,8 +32,6 @@ so we will use this flexibility to ensure some "interesting" denovo designs are 
 
 ## Installation
 
-See [here](https://github.com/sokrypton/ColabFold?tab=readme-ov-file) for instructions on how to install the ColabFold pipeline. We use it to generate structure predictions.
-
 To run the python scripts in this repository, you will need to install the requirements with pip.
 
 ```bash
@@ -41,7 +39,7 @@ python -m pip install -r requirements.txt
 ```
 
 # After LocalColabFold SETUP
-A comprehensive guide for protein design analysis using ColabFold and associated metrics tools.
+See [LocalColabFold](https://github.com/sokrypton/ColabFold?tab=readme-ov-file) for instructions on how to install the Local ColabFold.
 
 ## Prerequisites
 
