@@ -133,7 +133,7 @@ colabfold_batch input.fasta ../designs_output --num-recycle 3 --num-seeds 3 --nu
 
 ### Step 2: Configure Extraction Script
 
-Edit the `extract_pae_iptm.sh` script with the following parameters:
+Edit the `extract_pae_iptm_pll.sh` script with the following parameters:
 
 ```bash
 INPUT_FASTA="designs_input/input.fasta"        # Batch input FASTA file
