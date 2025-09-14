@@ -178,9 +178,9 @@ python rank.py metrics.csv --asc esm_pll --asc iptm --desc pae_interaction --sav
 
 | Metric | Description | Better Value |
 |--------|-------------|--------------|
-| **iPTM** | Interface Predicted Template Modeling confidence | Higher (closer to 1.0) |
-| **PAE Interaction** | Predicted Aligned Error for protein interactions | Lower |
-| **PLL** | Protein Language Model likelihood | Context-dependent |
+| **iPTM** |  interface predicted template modelling | Higher (closer to 1.0) |
+| **PAE Interaction** | Predicted Aligned Error | Lower < 10 is better |
+| **PLL** | Protein Language Model likelihood | the lower in -ve better |
 
 ## Tips for Success
 
