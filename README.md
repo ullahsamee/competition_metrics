@@ -51,15 +51,21 @@ See [LocalColabFold](https://github.com/sokrypton/ColabFold?tab=readme-ov-file) 
 
 ### Step 1: Prepare Input File
 
-Create a FASTA file in your home directory:
+Create a FASTA files:
 
 ```bash
-# Create input.fasta anywhere in home directory
-nano input.fasta
+# Create input.fasta for single single
+>MyProteinDesign
+Bindersequence:targetproteinseuqence
 ```
 
-```fasta
->MyProteinDesign
+```bash
+#For batch sequences
+>seq1
+Bindersequence:targetproteinseuqence
+>seq2
+Bindersequence:targetproteinseuqence
+>seq3
 Bindersequence:targetproteinseuqence
 ```
 
@@ -69,6 +75,8 @@ Execute the following command in your terminal:
 
 ```bash
 colabfold_batch input.fasta output_dir --num-recycle 3 --num-seeds 3 --num-models 5 --templates
+
+#For more informations on COMMANDS check LocalColabFold
 ```
 
 **Parameters:**
@@ -84,6 +92,10 @@ Navigate to the metrics directory and run:
 ```bash
 cd competition_metrics-main
 python compute_af2_metrics.py /home/ullah/output_dir MyProteinDesign --target_length 118
+
+#Please check according to yours;
+# path for input/output
+# length of target 
 ```
 
 **Expected Output:**
