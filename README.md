@@ -136,7 +136,7 @@ TARGET_LENGTH=118                              # Target sequence length
 bash extract_pae_iptm.sh
 ```
 
-This will generate a CSV file containing iPTM and PAE values for all designs.
+This will generate a CSV file containing iPTM, PAE, PLL for all designs.
 
 ### Step 4: Rank Designs
 
