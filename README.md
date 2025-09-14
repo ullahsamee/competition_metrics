@@ -1,11 +1,6 @@
-# Adaptyv Bio Competition Metrics
-
-In round 2 of our [protein design competition](https://design.adaptyvbio.com/) we are using a rank average of three metrics: iPTM, ESM PLL and PAE interaction.
-Here you can find some implementation details on how to compute those metrics for your proteins, as well as our rationale with going with these metrics and aggregation method.
-
 # Metrics Rationale
 
-After our [call for suggestions and input](https://x.com/adaptyvbio/status/1841863101408280651), we internally discussed scores like PRODIGY, molecular dynamics simulations and other ideas and also sought out (and received) feedback about their generality.
+Please check [Protein Design Competition](https://design.adaptyvbio.com/), we internally discussed scores like PRODIGY, molecular dynamics simulations and other ideas and also sought out (and received) feedback about their generality.
 
 Our goal was to find "better" metrics that would in particular help us to choose (and the participants to design) sequences that are likely to express and be measurable, since the "high" rate of non-expression was a source of frustration for some round 1 participants.
 
